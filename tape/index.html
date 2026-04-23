@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>87 Dance</title>
-  <meta name="description" content="87 Dance (팔칠댄스) — Dance crew from South Korea">
+  <title>87DANCE</title>
+  <meta name="description" content="87DANCE (팔칠댄스) — Band from Seoul, South Korea">
   <link rel="icon" href="/logo-white.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -280,6 +280,187 @@
       margin-top: 8px;
     }
 
+    /* ─── MUSIC PLAYER ─── */
+    .music {
+      border-top: 1px solid var(--border);
+    }
+
+    .music-player {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .music-now-playing {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .music-play-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .music-play-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+    }
+
+    .music-play-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #000;
+    }
+
+    .music-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .music-track-name {
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .music-track-artist {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .music-progress-wrap {
+      padding: 0 20px 16px;
+    }
+
+    .music-progress-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .music-progress-fill {
+      height: 100%;
+      background: #fff;
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    .music-time {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .music-tracklist {
+      max-height: 320px;
+      overflow-y: auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .music-tracklist::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .music-tracklist::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+    }
+
+    .music-track-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .music-track-item:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .music-track-item.active {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .music-track-num {
+      font-size: 13px;
+      color: var(--text-muted);
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .music-track-item.active .music-track-num {
+      color: #fff;
+    }
+
+    .music-track-item-name {
+      font-size: 14px;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .music-track-item.active .music-track-item-name {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .music-eq {
+      display: none;
+      gap: 2px;
+      align-items: flex-end;
+      height: 14px;
+    }
+
+    .music-track-item.active.playing .music-eq {
+      display: flex;
+    }
+
+    .music-track-item.active.playing .music-track-num {
+      display: none;
+    }
+
+    .music-eq span {
+      width: 3px;
+      background: #fff;
+      border-radius: 1px;
+      animation: eq 0.8s ease-in-out infinite alternate;
+    }
+
+    .music-eq span:nth-child(1) { height: 6px; animation-delay: 0s; }
+    .music-eq span:nth-child(2) { height: 10px; animation-delay: 0.2s; }
+    .music-eq span:nth-child(3) { height: 4px; animation-delay: 0.4s; }
+
+    @keyframes eq {
+      0% { height: 4px; }
+      100% { height: 14px; }
+    }
+
     /* ─── GALLERY ─── */
     .gallery {
       border-top: 1px solid var(--border);
@@ -544,7 +725,7 @@
     <div class="hero-gradient"></div>
     <div class="hero-content">
       <img src="/logo-white.png" alt="87 Dance Logo" class="hero-logo">
-      <div class="hero-title">87 Dance</div>
+      <div class="hero-title">87DANCE</div>
       <div class="hero-subtitle">Seoul, South Korea</div>
       <div class="hero-socials">
         <a href="https://www.youtube.com/@87DANCEOFFICIAL" target="_blank" rel="noopener" aria-label="YouTube">
@@ -572,11 +753,11 @@
           Seoul, South Korea
         </div>
         <p class="bio-desc">
-          87 Dance (팔칠댄스) is a dance crew based in Seoul, South Korea. Known for their unique choreography and powerful performances, they bring a fresh perspective to the Korean dance scene — blending contemporary and street styles with cinematic storytelling.
+          로우파이 힙합부터 강렬한 록 사운드까지 음악적 다양성을 추구하는 밴드 팔칠댄스. 팔칠댄스는 LOFI하고 얼터너티브한 사운드를 기반으로 몽환적이고 신비로운 사운드를 구현하는 밴드로, 한가지 장르에 국한되지 않고 여러장르의 음악을 자신들만의 색채로 표현하는 그들의 음악은 그들이 가진 음악적 다양성에 대한 유연함을 엿볼 수 있다. 팔칠댄스만의 특이한 색채의 사운드로 주목받으며 애플뮤직 최고의 음악 및 스포티파이 공식 플레이리스트에 등재되고 해외 여러 페스티벌에 섭외되며 현재 많은 주목을 받고있다. 또한 그들이 매년 주관하는 독자적인 이벤트 &lt;87DAY&gt;는 새롭게 팔칠댄스가 주목하는 신인밴드들의 인큐베이팅과 더불어 타팀 뮤지션과의 즉흥연주를 통해 관객들로 하여금 새로운 재미를 선사한다.
         </p>
         <div class="bio-stats">
           <div class="bio-stat">
-            <div class="bio-stat-value">5</div>
+            <div class="bio-stat-value">4</div>
             <div class="bio-stat-label">Members</div>
           </div>
           <div class="bio-stat">
@@ -615,6 +796,32 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
       </a>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section class="section music fade-in" id="music">
+    <div class="section-title">Music</div>
+    <div class="music-player">
+      <div class="music-now-playing">
+        <button class="music-play-btn" id="playBtn" onclick="togglePlay()">
+          <svg viewBox="0 0 24 24" id="playIcon"><polygon points="6,3 20,12 6,21"/></svg>
+        </button>
+        <div class="music-info">
+          <div class="music-track-name" id="nowPlayingName">LOVE IN BALCONY</div>
+          <div class="music-track-artist">87DANCE (팔칠댄스)</div>
+        </div>
+      </div>
+      <div class="music-progress-wrap">
+        <div class="music-progress-bar" id="progressBar" onclick="seekTrack(event)">
+          <div class="music-progress-fill" id="progressFill"></div>
+        </div>
+        <div class="music-time">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+      <div class="music-tracklist" id="tracklist"></div>
     </div>
   </section>
 
@@ -682,6 +889,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         Videos
       </a>
+      <a href="#music">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        Music
+      </a>
       <a href="#gallery">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
         Gallery
@@ -700,6 +911,133 @@
   </div>
 
   <script>
+    // ─── MUSIC PLAYER ───
+    const tracks = [
+      { num: '01', name: 'LOVE IN BALCONY', id: '1xdNfmNw2PkIlCNP0sOvqmsMgPKsRJtM_' },
+      { num: '02', name: 'CANDY', id: '1CHaukzyOcQi5d6ijdmydUQ1QwB2FdABR' },
+      { num: '03', name: 'EVEN IF FALL INTO A FAIL', id: '16mA_G0pxYH7uIpvOE-t2yqq0AtoIXL3u' },
+      { num: '04', name: 'BLUE TOKYO', id: '1fNeXAe2Asd-VPvZMofUXtluTkr2k0hJ5' },
+      { num: '05', name: 'ZZZ', id: '1iNnU3QqGyIUTqJe9Iu_pPIkwN71iBvPC' },
+      { num: '06', name: 'ROM-COM', id: '1ehIakaXR_EAq5qLowbiHC4I9_3tu81D-' },
+      { num: '06-2', name: 'DUCK BOAT', id: '1wd1fpuoJCfVGoJ04Wffz5AtJHhpq-y82' },
+      { num: '07-1', name: '4DL', id: '1fHzRKbiSJYxk5krIGZyAYAfvQkEmzjlR' },
+      { num: '07-2', name: 'HIDE AND SEEK', id: '1OMRWb0NhVK-z2bZ8KPszu4znwFfnAmyo' },
+      { num: '08', name: 'SMOKIN BLUE', id: '1ZU2Amdj4JMpNQ9DkhNOJhI8NiV1amwUM' },
+      { num: '09', name: 'PASSING LOVE', id: '1XKhQ8SVOxFn5dH_aXdXj6kPgblyQ6vU9' },
+      { num: '10', name: 'SAFFRON', id: '1SIBbvgjCOnrFE3hKUYvmszqdr879UK3-' },
+      { num: '11', name: 'PUPPET', id: '12aY39lnkvDLKJYgeT3X-rwCdOKc1Zuvp' },
+      { num: '12', name: 'AND OTHER DAYS', id: '1uLNEWnb5NSnRxPn3ORlzQ7r2rwU9qOgv' },
+      { num: '13', name: 'A NIGHT PERSON', id: '1soyOq0pgreOsikEHj3JY2uWAIlqc67aK' },
+      { num: '14', name: 'BARTENDER', id: '17TYnO4ew4KBNN8CJSySpOHRkfMxo7GRc' },
+      { num: '15', name: "YOU'RE MY CAKE", id: '1PssEZLuWQ2pwOcoYNTXnCuWyN7QK_HsB' },
+      { num: '16', name: 'HOW CAN I FORGET YOU GIRL', id: '1_syPT4HtOCd3WQ-tBUURfw6MpMnRcW7U' },
+      { num: '17-1', name: 'HUSH', id: '1iXlHADpvDs2FBjQNQtT7XCjMS9NA9ehv' },
+      { num: '17-2', name: 'MUSH', id: '15UzfwT-s1AP1KNY3cQYVaouU7aV_lTKT' },
+      { num: '18', name: 'DEVIL', id: '1cezLKZgYM223xYGIRAQRdo1GEdWaeV0z' },
+      { num: '19', name: 'RANDOM BOX', id: '1eOZfdYfX6FE8J2zF5cTa6pg6cUE902wa' },
+      { num: '20', name: 'BEAUTIFUL COMPLEX', id: '1WX3Eze7z75dX_LmWmH3Vg7sJ9rQLcAmC' },
+      { num: '21', name: 'DREAM SERVICE', id: '1O0ouBhaPyBBPUSDECxRTh0_rKcjRCofO' }
+    ];
+
+    let currentTrackIndex = 0;
+    let isPlaying = false;
+    const audio = new Audio();
+
+    function getAudioUrl(id) {
+      return 'https://drive.google.com/uc?export=download&id=' + id;
+    }
+
+    function formatTime(sec) {
+      if (isNaN(sec)) return '0:00';
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return m + ':' + (s < 10 ? '0' : '') + s;
+    }
+
+    function renderTracklist() {
+      const el = document.getElementById('tracklist');
+      el.innerHTML = tracks.map((t, i) =>
+        '<div class="music-track-item' + (i === currentTrackIndex ? ' active' : '') + '" onclick="playTrack(' + i + ')">' +
+          '<div class="music-eq"><span></span><span></span><span></span></div>' +
+          '<div class="music-track-num">' + t.num + '</div>' +
+          '<div class="music-track-item-name">' + t.name + '</div>' +
+        '</div>'
+      ).join('');
+      updateActiveStates();
+    }
+
+    function updateActiveStates() {
+      document.querySelectorAll('.music-track-item').forEach((el, i) => {
+        el.classList.toggle('active', i === currentTrackIndex);
+        el.classList.toggle('playing', i === currentTrackIndex && isPlaying);
+      });
+    }
+
+    function loadTrack(index) {
+      currentTrackIndex = index;
+      audio.src = getAudioUrl(tracks[index].id);
+      document.getElementById('nowPlayingName').textContent = tracks[index].name;
+      document.getElementById('progressFill').style.width = '0%';
+      document.getElementById('currentTime').textContent = '0:00';
+      document.getElementById('duration').textContent = '0:00';
+      renderTracklist();
+    }
+
+    function togglePlay() {
+      if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play().catch(function() {});
+      }
+    }
+
+    function playTrack(index) {
+      loadTrack(index);
+      audio.play().catch(function() {});
+    }
+
+    function seekTrack(e) {
+      const bar = document.getElementById('progressBar');
+      const pct = e.offsetX / bar.offsetWidth;
+      if (audio.duration) audio.currentTime = pct * audio.duration;
+    }
+
+    audio.addEventListener('play', function() {
+      isPlaying = true;
+      document.getElementById('playIcon').innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+      updateActiveStates();
+    });
+
+    audio.addEventListener('pause', function() {
+      isPlaying = false;
+      document.getElementById('playIcon').innerHTML = '<polygon points="6,3 20,12 6,21"/>';
+      updateActiveStates();
+    });
+
+    audio.addEventListener('timeupdate', function() {
+      if (audio.duration) {
+        document.getElementById('progressFill').style.width = (audio.currentTime / audio.duration * 100) + '%';
+        document.getElementById('currentTime').textContent = formatTime(audio.currentTime);
+      }
+    });
+
+    audio.addEventListener('loadedmetadata', function() {
+      document.getElementById('duration').textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('ended', function() {
+      if (currentTrackIndex < tracks.length - 1) {
+        playTrack(currentTrackIndex + 1);
+      } else {
+        isPlaying = false;
+        document.getElementById('playIcon').innerHTML = '<polygon points="6,3 20,12 6,21"/>';
+        updateActiveStates();
+      }
+    });
+
+    // Initialize tracklist
+    renderTracklist();
+
     // Lightbox
     function openLightbox(el) {
       document.getElementById('lightbox-img').src = el.src;
