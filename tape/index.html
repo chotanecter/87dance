@@ -913,38 +913,38 @@
   <script>
     // ─── MUSIC PLAYER ───
     const tracks = [
-      { num: '01', name: 'LOVE IN BALCONY', id: '1xdNfmNw2PkIlCNP0sOvqmsMgPKsRJtM_' },
-      { num: '02', name: 'CANDY', id: '1CHaukzyOcQi5d6ijdmydUQ1QwB2FdABR' },
-      { num: '03', name: 'EVEN IF FALL INTO A FAIL', id: '16mA_G0pxYH7uIpvOE-t2yqq0AtoIXL3u' },
-      { num: '04', name: 'BLUE TOKYO', id: '1fNeXAe2Asd-VPvZMofUXtluTkr2k0hJ5' },
-      { num: '05', name: 'ZZZ', id: '1iNnU3QqGyIUTqJe9Iu_pPIkwN71iBvPC' },
-      { num: '06', name: 'ROM-COM', id: '1ehIakaXR_EAq5qLowbiHC4I9_3tu81D-' },
-      { num: '06-2', name: 'DUCK BOAT', id: '1wd1fpuoJCfVGoJ04Wffz5AtJHhpq-y82' },
-      { num: '07-1', name: '4DL', id: '1fHzRKbiSJYxk5krIGZyAYAfvQkEmzjlR' },
-      { num: '07-2', name: 'HIDE AND SEEK', id: '1OMRWb0NhVK-z2bZ8KPszu4znwFfnAmyo' },
-      { num: '08', name: 'SMOKIN BLUE', id: '1ZU2Amdj4JMpNQ9DkhNOJhI8NiV1amwUM' },
-      { num: '09', name: 'PASSING LOVE', id: '1XKhQ8SVOxFn5dH_aXdXj6kPgblyQ6vU9' },
-      { num: '10', name: 'SAFFRON', id: '1SIBbvgjCOnrFE3hKUYvmszqdr879UK3-' },
-      { num: '11', name: 'PUPPET', id: '12aY39lnkvDLKJYgeT3X-rwCdOKc1Zuvp' },
-      { num: '12', name: 'AND OTHER DAYS', id: '1uLNEWnb5NSnRxPn3ORlzQ7r2rwU9qOgv' },
-      { num: '13', name: 'A NIGHT PERSON', id: '1soyOq0pgreOsikEHj3JY2uWAIlqc67aK' },
-      { num: '14', name: 'BARTENDER', id: '17TYnO4ew4KBNN8CJSySpOHRkfMxo7GRc' },
-      { num: '15', name: "YOU'RE MY CAKE", id: '1PssEZLuWQ2pwOcoYNTXnCuWyN7QK_HsB' },
-      { num: '16', name: 'HOW CAN I FORGET YOU GIRL', id: '1_syPT4HtOCd3WQ-tBUURfw6MpMnRcW7U' },
-      { num: '17-1', name: 'HUSH', id: '1iXlHADpvDs2FBjQNQtT7XCjMS9NA9ehv' },
-      { num: '17-2', name: 'MUSH', id: '15UzfwT-s1AP1KNY3cQYVaouU7aV_lTKT' },
-      { num: '18', name: 'DEVIL', id: '1cezLKZgYM223xYGIRAQRdo1GEdWaeV0z' },
-      { num: '19', name: 'RANDOM BOX', id: '1eOZfdYfX6FE8J2zF5cTa6pg6cUE902wa' },
-      { num: '20', name: 'BEAUTIFUL COMPLEX', id: '1WX3Eze7z75dX_LmWmH3Vg7sJ9rQLcAmC' },
-      { num: '21', name: 'DREAM SERVICE', id: '1O0ouBhaPyBBPUSDECxRTh0_rKcjRCofO' }
+      { num: '01', name: 'LOVE IN BALCONY', file: '01.-love-in-balcony.mp3' },
+      { num: '02', name: 'CANDY', file: '02.-candy.mp3' },
+      { num: '03', name: 'EVEN IF FALL INTO A FAIL', file: '03.-even-if-fall-into-a-fail.mp3' },
+      { num: '04', name: 'BLUE TOKYO', file: '04.-blue-tokyo.mp3' },
+      { num: '05', name: 'ZZZ', file: '05.-zzz.mp3' },
+      { num: '06', name: 'ROM-COM', file: '06.-rom-com.mp3' },
+      { num: '06-2', name: 'DUCK BOAT', file: '06-2.-duck-boat.mp3' },
+      { num: '07-1', name: '4DL', file: '07-1.-4dl.mp3' },
+      { num: '07-2', name: 'HIDE AND SEEK', file: '07-2.-hide-and-seek.mp3' },
+      { num: '08', name: 'SMOKIN BLUE', file: '08.-smokin-blue.mp3' },
+      { num: '09', name: 'PASSING LOVE', file: '09.-passing-love.mp3' },
+      { num: '10', name: 'SAFFRON', file: '10.-saffron.mp3' },
+      { num: '11', name: 'PUPPET', file: '11.-puppet.mp3' },
+      { num: '12', name: 'AND OTHER DAYS', file: '12.-and-other-days.mp3' },
+      { num: '13', name: 'A NIGHT PERSON', file: '13.-a-night-person.mp3' },
+      { num: '14', name: 'BARTENDER', file: '14.-bartender.mp3' },
+      { num: '15', name: "YOU'RE MY CAKE", file: '15.-you_re-my-cake.mp3' },
+      { num: '16', name: 'HOW CAN I FORGET YOU GIRL', file: '16.-how-can-i-forget-you-girl.mp3' },
+      { num: '17-1', name: 'HUSH', file: '17-1.-hush.mp3' },
+      { num: '17-2', name: 'MUSH', file: '17-2.-mush.mp3' },
+      { num: '18', name: 'DEVIL', file: '18.-devil.mp3' },
+      { num: '19', name: 'RANDOM BOX', file: '19.-random-box.mp3' },
+      { num: '20', name: 'BEAUTIFUL COMPLEX', file: '20.-beautiful-complex.mp3' },
+      { num: '21', name: 'DREAM SERVICE', file: '21.-dream-service.mp3' }
     ];
 
     let currentTrackIndex = 0;
     let isPlaying = false;
     const audio = new Audio();
 
-    function getAudioUrl(id) {
-      return 'https://drive.google.com/uc?export=download&id=' + id;
+    function getAudioUrl(file) {
+      return '/tape/music/' + file;
     }
 
     function formatTime(sec) {
@@ -975,7 +975,7 @@
 
     function loadTrack(index) {
       currentTrackIndex = index;
-      audio.src = getAudioUrl(tracks[index].id);
+      audio.src = getAudioUrl(tracks[index].file);
       document.getElementById('nowPlayingName').textContent = tracks[index].name;
       document.getElementById('progressFill').style.width = '0%';
       document.getElementById('currentTime').textContent = '0:00';
